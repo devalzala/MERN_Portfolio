@@ -1,0 +1,319 @@
+.homeCanvas {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  /* background-color: black; */
+  filter: blur(8px);
+  position: absolute;
+}
+
+.homeCanvasContainer {
+  background-color: rgba(0, 0, 0, 0.048);
+  width: "100%";
+  z-index: 2;
+  position: relative;
+  height: 100vh;
+  color: white;
+}
+
+.homeCanvasContainer > h4 {
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  background-color: white;
+  padding: 0 1vmax 0 1vmax;
+  text-align: center;
+  font: 700 2.1vmax "Josefin Sans", sans-serif;
+}
+
+.homeCanvasContainer > h4 > p {
+  transition: all 0.5s;
+  color: rgb(36, 36, 36);
+}
+
+.homeCanvasContainer > a {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 34, 2, 1) 0%,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(0, 226, 255, 1) 100%
+  );
+  color: white;
+  transition: all 0.5s;
+  font: 700 1rem "Ubuntu Mono", "Roboto";
+  text-decoration: none;
+  padding: 2vmax 6vmax;
+  box-sizing: border-box;
+  /* border: 1px solid white; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homeCanvasContainer > a:hover {
+  background-color: black;
+  color: white;
+  opacity: 0.2;
+  border: 8px solid white;
+}
+
+.homeCanvasBox {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  text-align: right;
+  transform: translate(0%, -50%);
+}
+
+.homeCanvasBox > h4 {
+  font: 900 4rem "Ubuntu Mono", "Roboto";
+  line-height: 130px;
+  letter-spacing: 5px;
+  color: white;
+}
+
+.homeScrollBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 49%;
+  border-radius: 100%;
+  transform: translate(-10%);
+  padding: 0.5vmax;
+  animation: scrollPop 0.8s ease-in infinite alternate;
+  bottom: 2%;
+}
+
+.homeScrollBtn > svg {
+  font-size: 3vmax;
+  color: rgb(255, 255, 255);
+}
+
+.homeContainer {
+  background-color: white;
+  padding-top: 4vmax;
+  border-radius: 0 0 200px 200px;
+  border-bottom: 200px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+.homeContainer > h3 {
+  text-align: center;
+  color: rgba(22, 20, 0.904);
+  padding: 4vmax;
+}
+
+.homeContainer > .timelineComponent {
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.homeSkills {
+  transform: translateY(-200px);
+  margin-bottom: -200px;
+  background-color: hsl(219, 48%, 8%);
+  position: relative;
+  padding-top: 200px;
+  height: 1100px;
+  display: flex;
+  perspective: 450px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.homeSkills > h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 4vmax;
+  font-size: 4vmax;
+}
+
+.homeCubeSkills {
+  width: 200px;
+  height: 200px;
+  animation: cubeRotation 15s linear infinite alternate;
+  transform-style: preserve-3d;
+}
+
+.homeCubeSkillsFaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0.7;
+}
+
+.homeCubeSkillsFaces > img {
+  width: inherit;
+  height: inherit;
+}
+
+.homeCubeSkillsFace1 {
+  transform: translate3d(0, 0, 100px);
+}
+
+.homeCubeSkillsFace2 {
+  transform: rotateY(180deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFace3 {
+  transform: rotateY(-90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFace4 {
+  transform: rotateY(90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFace5 {
+  transform: rotateX(90deg) translate3d(0, 0, 150px);
+}
+
+.homeCubeSkillsFace6 {
+  transform: rotateY(-90deg) translate3d(0, 0, 150px);
+}
+
+.cubeShadow {
+  width: 300px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 50%;
+  animation: cubeShadow 2s ease-in-out infinite alternate;
+  filter: blur(3px);
+}
+
+.homeSkillsBox {
+  background-color: hsl(250, 100%, 75%);
+  padding: 0 2vmax;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: -300px;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.homeSkillsBox > svg {
+  font-size: 3.5vmax;
+  color: white;
+  transition: all 0.5s;
+  margin: 10px;
+}
+
+.homeSkillsBox > svg:hover {
+  transform: scale(1.5);
+}
+
+@keyframes cubeRotation {
+  to {
+    transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
+  }
+}
+
+@keyframes cubeShadow {
+  to {
+    transform: scale(1.2) translateY(-10px);
+  }
+}
+
+@keyframes homeSkillsBoxAnimationOn {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 40px;
+  }
+}
+
+@keyframes homeSkillsBoxAnimationOff {
+  from {
+    right: 40px;
+  }
+  to {
+    right: -300px;
+  }
+}
+
+@keyframes scrollPop {
+  to {
+    transform: translateY(-15%);
+    /* transform: translateX(-10%); */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homeCanvasContainer > h4 {
+    padding: 3vmax;
+    font: 900;
+    font-size: 2.5vmax;
+    top: 20%;
+  }
+
+  .homeCanvasBox > h4 {
+    font: 500 1.5rem "Ubuntu Mono", "Roboto";
+    line-height: 80px;
+    /* letter-spacing: 5px; */
+    color: white;
+  }
+
+  .homeCanvasContainer > a {
+    background: linear-gradient(
+      90deg,
+      rgba(247, 34, 2, 1) 0%,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(0, 226, 255, 1) 100%
+    );
+    color: white;
+    transition: all 0.5s;
+    font: 500 1rem "Ubuntu Mono", "Roboto";
+    text-decoration: none;
+    padding: 1.5vmax 4vmax;
+    box-sizing: border-box;
+    /* border: 1px solid white; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .homeScrollBtn {
+    left: 45%;
+    padding: 0.1vmax;
+  }
+
+  .homeScrollBtn > svg {
+    font-size: 6.5vmax;
+    color: rgb(255, 255, 255);
+  }
+
+  .homeCubeSkills {
+    width: 100px;
+    height: 100px;
+  }
+
+  @keyframes homeSkillsBoxAnimationOn {
+    to {
+      right: 20px;
+    }
+  }
+
+  @keyframes homeSkillsBoxAnimationOff {
+    from {
+      right: 20px;
+    }
+  }
+
+  .homeSkills {
+    margin-top: 10px;
+    height: 800px;
+  }
+}

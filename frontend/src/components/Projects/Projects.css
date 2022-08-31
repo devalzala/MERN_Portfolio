@@ -1,0 +1,155 @@
+.projects {
+  background-color: hsl(219, 48%, 8%);
+  min-height: 100vh;
+  padding-top: 15vmax;
+  overflow-y: scroll;
+}
+
+.projects > h3 {
+  position: fixed;
+  text-align: center;
+  color: white;
+  position: absolute;
+  background-color: red;
+  opacity: 0.8;
+  padding: 2vmax 4vmax;
+  display: flex;
+  border-radius: 100px;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, -100vh);
+  animation: projectHeadingAnimation 1s ease-in-out forwards;
+}
+
+.projects > h3 > svg {
+  margin: 1vmax;
+}
+
+.projectsWrapper {
+  border-top: 80px solid white;
+  min-height: inherit;
+  border-radius: 300px 300px 0 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5vmax;
+  padding-bottom: 10vmax;
+  overflow-x: hidden;
+  max-height: 100vh;
+  /* border: none; */
+}
+
+.projectsWrapper::-webkit-scrollbar {
+  display: none;
+}
+.adminPanelContainer {
+  max-height: 200vh;
+  overflow-y: scroll;
+}
+
+.adminPanelContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.projectCard {
+  width: 80%;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.712);
+  margin: 2vmax;
+  border-radius: 10px;
+  display: flex;
+  transform: translateX(-100vw);
+  animation: projectCardAnimation 2s ease-in-out forwards 0.5s;
+}
+
+.projectCard:hover {
+  color: chocolate;
+}
+
+.projectCard:nth-child(even) {
+  transform: translateX(100vw);
+  flex-direction: row-reverse;
+  animation: projectCardAnimation 2s ease-in-out forwards 1s;
+}
+
+.projectCard > div {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s;
+  justify-content: space-around;
+}
+
+.projectCard > div:first-child::after {
+  content: "VIEW DEMO";
+  width: 100%;
+  height: 100%;
+  font: 100 2rem "Roboto";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  opacity: 0.75;
+  color: white;
+}
+
+.projectCard > div:first-child > h5 {
+  text-align: center;
+  padding: 2vmax;
+}
+
+.projectCard > div:last-child {
+  padding: 3vmax;
+}
+
+.projectCard > div:last-child > h4 {
+  text-align: center;
+}
+
+.projectCard > div:last-child > h6 {
+  font-family: "Ubuntu Mono";
+  font-weight: bold;
+  color: black;
+}
+
+.projectCard > div > img {
+  width: inherit;
+}
+
+.deleteButton > svg:hover {
+  color: red;
+}
+
+@keyframes projectCardAnimation {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes projectHeadingAnimation {
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectCard {
+    flex-direction: column;
+  }
+
+  .projectCard > div {
+    justify-content: center;
+  }
+
+  .projectCard > div:last-child > p {
+    text-align: center;
+  }
+
+  .projectCard:nth-child(even) {
+    flex-direction: column;
+  }
+}

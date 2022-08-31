@@ -1,0 +1,9 @@
+
+.timelineHeight {
+  max-height: 270px;
+  overflow-y: scroll;
+}
+
+.timelineHeight::-webkit-scrollbar{
+    display: none;
+}
